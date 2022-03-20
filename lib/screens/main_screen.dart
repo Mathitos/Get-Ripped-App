@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-
-import 'package:get_ripped/screens/intro_screen.dart';
+import 'package:get_ripped/screens/program_screen.dart';
 import 'package:get_ripped/screens/timer_screen.dart';
 
-class BottomNavigator extends StatefulWidget {
-  const BottomNavigator({Key? key}) : super(key: key);
+class MainScreen extends StatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavigator> createState() => _BottomNavigatorState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _BottomNavigatorState extends State<BottomNavigator> {
+class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
-    IntroScreen(),
+    ProgramScreen(),
     TimerScreen(),
   ];
 

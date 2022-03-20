@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
-class IntroScreen extends StatelessWidget {
-  const IntroScreen({Key? key}) : super(key: key);
+import 'package:get_ripped/screens/main_screen.dart';
+
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Timer(Duration(seconds: 5), () {
+      Navigator.push(context, MaterialPageRoute(builder: (_) => MainScreen()));
+    });
+
     return Scaffold(
         body: Container(
       decoration: BoxDecoration(
