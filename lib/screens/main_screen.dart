@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get_ripped/screens/program_screen.dart';
 import 'package:get_ripped/screens/timer_screen.dart';
+
+import '../data_class/program.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -11,10 +15,8 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    ProgramScreen(),
-    TimerScreen(),
-  ];
+
+  List<Widget> _widgetOptions = [];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -22,8 +24,37 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
+  Program getUserProgram() {
+    return Program.fromJson(jsonDecode('''
+      {
+      "exercises": [
+        {
+          "name": "DeadLift",
+          "cooldown": "3-4min",
+          "sets": "5",
+          "weightProgressionEntries": [
+            {"day": "1969-07-20 20:18:04Z", "reps": "7", "weight": "20 Kg"}
+          ]
+        }
+      ]
+    }
+    '''));
+  }
+
+  void initializeWidgetOptions(Program program) {
+    _widgetOptions = <Widget>[
+      ProgramScreen(
+        program: program,
+      ),
+      TimerScreen(),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
+    Program program = getUserProgram();
+    initializeWidgetOptions(program);
+
     return Scaffold(
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

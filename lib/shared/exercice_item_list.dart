@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../screens/program_screen.dart';
+import '../data_class/exercise.dart';
 
 class ExerciseItemList extends StatelessWidget {
   const ExerciseItemList(
