@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get_ripped/screens/intro_screen.dart';
+import 'package:get_ripped/shared/bottom_navigator.dart';
 
 void main() {
   runApp(GRippedApp());
@@ -11,6 +11,7 @@ class GRippedApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(primarySwatch: Colors.blueGrey), home: IntroScreen());
+        theme: ThemeData(primarySwatch: Colors.blueGrey),
+        home: BottomNavigator());
   }
 }
