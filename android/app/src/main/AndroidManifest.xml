@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.get_ripped">
+    package="dev.compass_solution.get_ripped">
    <application
         android:label="get_ripped"
         android:name="${applicationName}"

@@ -45,6 +45,11 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
 
+  # The "Change App Package Name for Flutter" package (https://pub.dev/packages/change_app_package_name)
+  # Change App Package Name with single command. It makes the process very easy and fast.
+
+  change_app_package_name: ^1.0.0
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
